@@ -16,7 +16,7 @@ Python 3.6 or higher, opencv-python and pytesseract
 Put your images in the Images folder.
 Edit line 89 of gtbuilder.py to use the text editor of your choice.  Run:
 ```bash
-gtbuilder.py [Path containing the Images folder] [Base Tesseract Trained Data]
+gtbuilder_img.py [Path containing the Images folder] [Base Tesseract Trained Data]
 ````
 For instance:
 ````bash
