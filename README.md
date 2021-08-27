@@ -20,11 +20,11 @@ gtbuilder.py [Path containing the Images folder] [Base Tesseract Trained Data]
 ````
 For instance:
 ````bash
-gtbuilder.py D:\Temp\GTBuilder\Images eng
+gtbuilder_img.py D:\Temp\GTBuilder\Images eng
 ````
 This will bring up each image individually and let you select the line to extract.  When you move your cursor over the image, you will see that it changes to a cross.  You should then be able to "rope and zone" the region of interest.  Once you are satisfied with the selection, hit enter.  This will now bring up your text editor with the text recognized by Tesseract.  You can then edit it for misread character and save it.  The snippet of the image and the text will be saved in the `model-ground-truth` folder.  The image is then moved to the `Images-done` folder and the process start again for the next image until all images are done.
 
-## Ground Truth made from real images
+## Ground Truth made from text2image
 
 Prior to Tesseract 4, it was possible to build training images containing entire page of training text.  This was used done with the program text2image.  This is still available in Tesseract 4.  The idea is:
 
