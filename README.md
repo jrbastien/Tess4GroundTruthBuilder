@@ -9,12 +9,17 @@ Build new ground truth train data  for Tesseract 4
 
 ## Prerequesites
 
-Python 3.6 or higher, opencv-python and pytesseract
+### Ground truth from real images
+Python 3.6 or higher, opencv-python, opencv-contrib-python, tesseract, pytesseract and the trained data for the language of your choice.  On Windows, it uses Notepad++, on Linux, Gedit.  Edit the python script to use the editor of your choice.
+
+### Ground truth from text2image
+Python 3.6 or higher, tesseract text2image utility
+
 
 ## Ground Truth made from real images
 
 Put your images in the Images folder.
-Edit line 89 of gtbuilder.py to use the text editor of your choice.  Run:
+Run:
 ```bash
 gtbuilder_img.py [Path containing the Images folder] [Base Tesseract Trained Data]
 ````
@@ -28,15 +33,17 @@ This will bring up each image individually and let you select the line to extrac
 
 Prior to Tesseract 4, it was possible to build training images containing entire page of training text.  This was used done with the program text2image.  This is still available in Tesseract 4.  The idea is:
 
-1. Create a text containing multiple line of text (base-ground-truth.txt)
-2. Split the base-ground-truth in individual files containing a single line of text for each font to be trained on
-3. Create an image with Text2Image for all those individual files
-4. Autocrop them to remove any white border
+1. Create a text containing multiple line of text (base-ground-truth.txt).  A carriage return is needed after each sentence or line.
+2. The code splits the base-ground-truth text in individual files containing a single line of text for each font to be trained on
+3. It then creates an image with Text2Image for all those individual files
+4. Finally, it auutocrops them to remove any white border
 
-This is currently done with bash scripts and ImageMagick and this is partially hardcoded.  This will be rewritten in python.
+To execute, run:
+````bash
+gtbuilder_text2image.py
+````
 
 ## Training
 
 Combine base truth data made from real images with the one made with Text2Image.
 Train as per instruction provided on [Tesseract training page](https://github.com/tesseract-ocr/tesstrain)
-
