@@ -36,12 +36,13 @@ Prior to Tesseract 4, it was possible to build training images containing entire
 1. Create a text containing multiple line of text (base-ground-truth.txt).  A carriage return is needed after each sentence or line.
 2. The code splits the base-ground-truth text in individual files containing a single line of text for each font to be trained on
 3. It then creates an image with Text2Image for all those individual files
-4. Finally, it auutocrops them to remove any white border
+4. Finally, it autocrops them to remove any white border
 
 To execute, run:
 ````bash
 gtbuilder_text2image.py
 ````
+Notice:  On Windows, it may be difficult to run text2Image.  Make sure it runs first in a command prompt.  If you get the error "Unable to open '/tmp/fonts.conf' for writing", add to the text2Image instructions `--fontconfig_tmpdir=C:/Users/youruser/Documents/folder_to_write_the_font_cache`.
 
 ## Training
 
