@@ -12,9 +12,9 @@ for (n, line)  in enumerate(lines[:-1]):
     os.system("text2image --ptsize=14 --xsize=14400 --ysize=300 --exposure=-1 --fonts_dir=./fonts --strip_unrenderable_words --leading=32 --char_spacing=0.0 --exposure=0 --outputbase=\"" + "./model-ground-truth/model-ground-truth-line{}".format(n+1) + "\" --font=\"tintin\" --text=\"" + "./model-ground-truth/model-ground-truth-line{}".format(n+1) + ".gt.txt" + "\" --resolution=300")
     # remove the box file that is only need for Tesseract 3.x training.
     os.remove("./model-ground-truth/model-ground-truth-line{}".format(n+1) + ".box")
-    # Save the cropped to text image
+    # Save the cropped image
     image=Image.open("./model-ground-truth/model-ground-truth-line{}".format(n+1) + ".tif") 
-    invert_im = ImageOps.invert(image.convert('RGB'))
-    x1,y1,x2,y2=invert_im.getbbox() 
-    im1 = image.crop((x1, y1, x2, y2)) 
+    invert_im = ImageOps.invert(image.convert('RGB')) #convert to RGB
+    x1,y1,x2,y2=invert_im.getbbox() #invert image as crop works on black pixels
+    im1 = image.crop((x1, y1, x2, y2)) #crop the orinal image as per coordinates found on inverted image
     im1.save("./model-ground-truth/model-ground-truth-line{}".format(n+1) + ".tif") 
