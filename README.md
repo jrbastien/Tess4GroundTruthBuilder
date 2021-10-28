@@ -31,7 +31,7 @@ This will bring up each image individually and let you select the line to extrac
 
 ## Ground Truth made from text2image
 
-Prior to Tesseract 4, it was possible to build training images containing entire page of training text.  This was used done with the program text2image.  This is still available in Tesseract 4.  The idea is:
+Prior to Tesseract 4, it was possible to build training images containing entire page of training text.  This was done with the program text2image.  This is still available in Tesseract 4.  The idea is:
 
 1. Create a text containing multiple line of text (base-ground-truth.txt).  A carriage return is needed after each sentence or line.
 2. The code splits the base-ground-truth text in individual files containing a single line of text for each font to be trained on
