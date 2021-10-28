@@ -1,5 +1,5 @@
-# Tess4GroundTruthBuilder
-Build new ground truth train data  for Tesseract 4
+# Tesseract 4 Ground Truth Builder tools
+Build new ground truth train data for Tesseract 4
 
 ## Overview
 
