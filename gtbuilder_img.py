@@ -64,6 +64,8 @@ for file in sorted(all_files):
         cv2.moveWindow(winname, 40,30)  # Move it to (40,30)
         cv2.imshow(winname, resize)
         r = cv2.selectROI(winname,resize, fromCenter)
+        if r ==(0,0,0,0):
+            sys.exit()
         print("Text selected:")
 
         # Crop 300 dpi image
