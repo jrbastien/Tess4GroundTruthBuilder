@@ -41,7 +41,7 @@ Prior to Tesseract 4, it was possible to build training images containing entire
 
 To execute, run:
 ````bash
-gtbuilder_text2image.py [Font to use in training]
+gtbuilder_text2image.py [Font used for the training set]
 ````
 Notice:  On Windows, it may be difficult to run text2Image.  Make sure it runs first in a command prompt.  If you get the error "Unable to open '/tmp/fonts.conf' for writing", add to the text2Image instructions `--fontconfig_tmpdir=C:/Users/youruser/Documents/folder_to_write_the_font_cache`.
 
